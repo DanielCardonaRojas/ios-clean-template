@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Model List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LightShowListViewController" id="BYZ-38-t0r" customClass="MyModelListViewController" customModule="iluminapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-eb-DKD">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MzX-eb-DKD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="84p-qN-t65"/>
+                            <constraint firstItem="MzX-eb-DKD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="FSt-IW-8Qm"/>
+                            <constraint firstItem="MzX-eb-DKD" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="G2v-5u-n9q"/>
+                            <constraint firstItem="MzX-eb-DKD" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="tr2-Dq-VLY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dDd-Of-Ciz"/>
+                    <connections>
+                        <outlet property="tableView" destination="MzX-eb-DKD" id="s77-54-eaL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="26.53673163418291"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="7mj-zX-uf0">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="gxc-Ga-myE" customClass="SettingsViewController" customModule="iluminapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lvi-wq-dDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YE-lt-7NA">
+                                <rect key="frame" x="16" y="44" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="N1a-ty-mvU">
+                                <rect key="frame" x="308" y="179" width="51" height="31"/>
+                                <connections>
+                                    <action selector="lightshowSourceSwitchChanged:" destination="gxc-Ga-myE" eventType="valueChanged" id="VTi-FC-VES"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uses fake lightshow data:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIy-tL-tzA">
+                                <rect key="frame" x="16" y="184" width="196" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yg5-2P-Ckw">
+                                <rect key="frame" x="16" y="129" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Development"/>
+                                    <segment title="Staging"/>
+                                    <segment title="Production"/>
+                                </segments>
+                                <connections>
+                                    <action selector="environmentChanged:" destination="gxc-Ga-myE" eventType="valueChanged" id="VYM-tm-1iW"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R0R-8h-dpn" firstAttribute="trailing" secondItem="N1a-ty-mvU" secondAttribute="trailing" constant="18" id="16L-1q-JVP"/>
+                            <constraint firstItem="XIy-tL-tzA" firstAttribute="top" secondItem="yg5-2P-Ckw" secondAttribute="bottom" constant="27" id="5fL-E0-cfg"/>
+                            <constraint firstItem="R0R-8h-dpn" firstAttribute="trailing" secondItem="0YE-lt-7NA" secondAttribute="trailing" constant="16" id="5jo-Jl-x1q"/>
+                            <constraint firstItem="yg5-2P-Ckw" firstAttribute="leading" secondItem="R0R-8h-dpn" secondAttribute="leading" constant="16" id="7Im-VJ-taW"/>
+                            <constraint firstItem="yg5-2P-Ckw" firstAttribute="top" secondItem="0YE-lt-7NA" secondAttribute="bottom" constant="64" id="Iee-GB-c5n"/>
+                            <constraint firstItem="0YE-lt-7NA" firstAttribute="leading" secondItem="R0R-8h-dpn" secondAttribute="leading" constant="16" id="Ist-oV-Q2b"/>
+                            <constraint firstItem="N1a-ty-mvU" firstAttribute="leading" secondItem="XIy-tL-tzA" secondAttribute="trailing" constant="96" id="myR-nC-tqK"/>
+                            <constraint firstItem="XIy-tL-tzA" firstAttribute="centerY" secondItem="N1a-ty-mvU" secondAttribute="centerY" id="nRL-ad-e39"/>
+                            <constraint firstItem="0YE-lt-7NA" firstAttribute="top" secondItem="R0R-8h-dpn" secondAttribute="top" constant="24" id="tff-ma-LqI"/>
+                            <constraint firstItem="R0R-8h-dpn" firstAttribute="trailing" secondItem="yg5-2P-Ckw" secondAttribute="trailing" constant="16" id="ury-EQ-AeR"/>
+                            <constraint firstItem="XIy-tL-tzA" firstAttribute="leading" secondItem="R0R-8h-dpn" secondAttribute="leading" constant="16" id="vuz-72-3MO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R0R-8h-dpn"/>
+                    </view>
+                    <connections>
+                        <outlet property="environmentSelector" destination="yg5-2P-Ckw" id="0KY-iL-DmB"/>
+                        <outlet property="usesFakeDataSwitch" destination="N1a-ty-mvU" id="Sd0-9O-TQr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbP-8A-Li8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="165.59999999999999" y="732.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

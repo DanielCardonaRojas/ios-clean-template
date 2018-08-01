@@ -1,0 +1,5 @@
+github "vadymmarkov/Fakery"
+github "hkellaway/Gloss"
+github "Alamofire/Alamofire" ~> 4.5
+github "realm/realm-cocoa"
+github "ReactiveX/RxSwift" ~> 4.0
